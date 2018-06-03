@@ -1,4 +1,4 @@
-% Detection principle homework
+% Detection principle homework T1
 a = 1e12;
 tau = 5 * 1e-6;
 f = 1e6;  % f =1Mhz
