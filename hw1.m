@@ -7,4 +7,7 @@ t = linspace(0,2*tau, 2*tau*fs);
 s12 = sin(2*pi*f*t).*exp(-a*(t-tau).^2/2);
 
 plot(t,s12)
+title('T1');
+xlabel('t/s');ylabel('mag/v');
+legend('s12')
 

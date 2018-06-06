@@ -14,18 +14,19 @@ t3 = t-dt3;
 
 % s21 is delay of s12, the time in this question
 % is set as 205ns 210ns 215ns,
-s22_1 = sin(2*pi*f*t1).*exp(-a*(t1-tau).^2/2);
-s22_2 = sin(2*pi*f*t2).*exp(-a*(t2-tau).^2/2);
-s22_3 = sin(2*pi*f*t3).*exp(-a*(t3-tau).^2/2);
+s21_1 = sin(2*pi*f*t1).*exp(-a*(t1-tau).^2/2);
+s21_2 = sin(2*pi*f*t2).*exp(-a*(t2-tau).^2/2);
+s21_3 = sin(2*pi*f*t3).*exp(-a*(t3-tau).^2/2);
 
-delaySeries = {s22_1, s22_2, s22_3};
+delaySeries = {s21_1, s21_2, s21_3};
 for i = 1:3
-    
     [c lags]=xcorr(s12,delaySeries{i}); 
     [c_max t_max]=max(c);
     N=t_max-length(s12); 
-    delayTime(i) = N/fs
+    delayTime(i) = N/fs;
 end
+fprintf('the internal of s12 and s21:,%ld\n',delayTime(1));
+
 
 
 
